@@ -269,7 +269,8 @@ User - {}"""
  ❏ 2𝟿𝟿₹    ➠    𝟶𝟼 ᴍᴏɴᴛʜ
  ❏ 459₹    ➠    𝟷𝟸 ᴍᴏɴᴛʜ
 
-🆔 ᴜᴘɪ ɪᴅ ➩ <code>gamerbhai02@apl</code> [ᴛᴀᴘ ᴛᴏ ᴄᴏᴘʏ]
+🆔 ᴜᴘɪ ɪᴅ ➩ <code>gamerbhai02@upi</code> [ᴛᴀᴘ ᴛᴏ ᴄᴏᴘʏ]
+📸 ǫʀ ᴄᴏᴅᴇ - <a href='https://telegra.ph/Payment-For-Premium-06-10'>ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ꜱᴄᴀɴ</a>
  
 ⛽️ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ: /myplan
 
