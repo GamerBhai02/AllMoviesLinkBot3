@@ -20,9 +20,9 @@ async def check_expired_premium(client):
                 user = await client.get_users(user_id)
                 await client.send_message(
                     chat_id=user_id,
-                    text=f"<b>ʜᴇʏ {user.mention},\n\nʏᴏᴜʀ ᴘʀᴇᴍɪᴜᴍ ᴀᴄᴄᴇss ʜᴀs ᴇxᴘɪʀᴇᴅ, ᴛʜᴀɴᴋ ʏᴏᴜ ꜰᴏʀ ᴜsɪɴɢ ᴏᴜʀ sᴇʀᴠɪᴄᴇ 😊\n\nɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴛᴀᴋᴇ ᴛʜᴇ ᴘʀᴇᴍɪᴜᴍ ᴀɢᴀɪɴ, ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ /plan ꜰᴏʀ ᴛʜᴇ ᴅᴇᴛᴀɪʟs ᴏꜰ ᴛʜᴇ ᴘʟᴀɴs...</b>"
+                    text=f"<b>𝖧𝖾𝗒 {user.mention},\n\n𝖸𝗈𝗎𝗋 𝗉𝗋𝖾𝗆𝗂𝗎𝗆 𝖺𝖼𝖼𝖾𝗌𝗌 𝗁𝖺𝗌 𝖾𝗑𝗉𝗂𝗋𝖾𝖽, 𝗍𝗁𝖺𝗇𝗄 𝗒𝗈𝗎 𝖿𝗈𝗋 𝗎𝗌𝗂𝗇𝗀 𝗈𝗎𝗋 𝗌𝖾𝗋𝗏𝗂𝖼𝖾 😊\n\n𝖨𝖿 𝗒𝗈𝗎 𝗐𝖺𝗇𝗍 𝗍𝗈 𝗍𝖺𝗄𝖾 𝗍𝗁𝖾 𝗉𝗋𝖾𝗆𝗂𝗎𝗆 𝖺𝗀𝖺𝗂𝗇, 𝗍𝗁𝖾𝗇 𝖼𝗅𝗂𝖼𝗄 𝗈𝗇 𝗍𝗁𝖾 /plan 𝖿𝗈𝗋 𝗍𝗁𝖾 𝖽𝖾𝗍𝖺𝗂𝗅𝗌 𝗈𝖿 𝗍𝗁𝖾 𝗉𝗅𝖺𝗇𝗌...</b>"
                 )
-                await client.send_message(LOG_CHANNEL, text=f"<b>#Premium_Expire\n\nUser name: {user.mention}\nUser id: <code>{user_id}</code>")
+                await client.send_message(LOG_CHANNEL, text=f"<b>#Premium_Expired\n\n𝖴𝗌𝖾𝗋𝗇𝖺𝗆𝖾: {user.mention}\n𝖴𝗌𝖾𝗋 𝖨𝖽: <code>{user_id}</code>")
             except Exception as e:
                 print(e)
             await sleep(0.5)
