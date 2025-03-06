@@ -11,7 +11,7 @@ async def set_ads(client, message):
     try:
         command_args = message.text.split(maxsplit=1)[1]
         if '#' not in command_args or len(command_args.split('#')) < 3:
-            await message.reply_text(f"Usage: /set_ads {{ads name}}#{{time}}#{{photo URL}} <a href=https://t.me/Jisshu_developer/9>Explain</a>")
+            await message.reply_text(f"𝖴𝗌𝖺𝗀𝖾: /set_ads {{ads name}}#{{time}}#{{photo URL}} <a href=https://t.me/Jisshu_developer/9>Explain</a>")
             return
 
         ads_name, duration_or_impression, url = command_args.split('#', 2)
@@ -19,11 +19,11 @@ async def set_ads(client, message):
         url = url.strip()
 
         if len(ads_name) > 35:
-            await message.reply_text(f"Advertisement name should not exceed 35 characters.")
+            await message.reply_text(f"𝖠𝖽𝗏𝖾𝗋𝗍𝗂𝗌𝖾𝗆𝖾𝗇𝗍 𝗇𝖺𝗆𝖾 𝗌𝗁𝗈𝗎𝗅𝖽 𝗇𝗈𝗍 𝖾𝗑𝖼𝖾𝖾𝖽 35 𝖼𝗁𝖺𝗋𝖺𝖼𝗍𝖾𝗋𝗌.")
             return
 
         if not re.match(r'https?://.+', url):
-            await message.reply_text(f"Invalid URL format. Use a valid Telegram link.")
+            await message.reply_text(f"𝖨𝗇𝗏𝖺𝗅𝗂𝖽 𝖴𝖱𝖫 𝖿𝗈𝗋𝗆𝖺𝗍. 𝖴𝗌𝖾 𝖺 𝗏𝖺𝗅𝗂𝖽 𝖳𝖾𝗅𝖾𝗀𝗋𝖺𝗆 𝗅𝗂𝗇𝗄.")
             return
 
         expiry_date = None
@@ -33,18 +33,18 @@ async def set_ads(client, message):
            
             duration = duration_or_impression[1:]
             if not duration.isdigit():
-                await message.reply_text(f"Duration must be a number.")
+                await message.reply_text(f"𝖣𝗎𝗋𝖺𝗍𝗂𝗈𝗇 𝗆𝗎𝗌𝗍 𝖻𝖾 𝖺 𝗇𝗎𝗆𝖻𝖾𝗋.")
                 return
             expiry_date = datetime.now() + timedelta(days=int(duration))
         elif duration_or_impression[0] == 'i':
            
             impression = duration_or_impression[1:]
             if not impression.isdigit():
-                await message.reply_text(f"Impression count must be a number.")
+                await message.reply_text(f"𝖨𝗆𝗉𝗋𝖾𝗌𝗌𝗂𝗈𝗇 𝖼𝗈𝗎𝗇𝗍 𝗆𝗎𝗌𝗍 𝖻𝖾 𝖺 𝗇𝗎𝗆𝖻𝖾𝗋.")
                 return
             impression_count = int(impression)
         else:
-            await message.reply_text(f"Invalid prefix. Use 'd' for duration and 'i' for impression count.")
+            await message.reply_text(f"𝖨𝗇𝗏𝖺𝗅𝗂𝖽 𝗉𝗋𝖾𝖿𝗂𝗑. 𝖴𝗌𝖾 'd' 𝖿𝗈𝗋 𝖽𝗎𝗋𝖺𝗍𝗂𝗈𝗇 𝖺𝗇𝖽 'i' 𝖿𝗈𝗋 𝗂𝗆𝗉𝗋𝖾𝗌𝗌𝗂𝗈𝗇 𝖼𝗈𝗎𝗇𝗍.")
             return
 
         reply = message.reply_to_message
