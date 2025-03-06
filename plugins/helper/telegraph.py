@@ -8,18 +8,18 @@ async def c_upload(client, message: Message):
     reply = message.reply_to_message
 
     if not reply.media:
-        return await message.reply_text("Reply to a media to upload it to Cloud.")
+        return await message.reply_text("𝖱𝖾𝗉𝗅𝗒 𝗍𝗈 𝖺 𝗆𝖾𝖽𝗂𝖺 𝗍𝗈 𝗎𝗉𝗅𝗈𝖺𝖽 𝗂𝗍 𝗍𝗈 𝖢𝗅𝗈𝗎𝖽.")
 
     if reply.document and reply.document.file_size > 512 * 1024 * 1024:  # 512 MB
-        return await message.reply_text("File size limit is 512 MB.")
+        return await message.reply_text("𝖥𝗂𝗅𝖾 𝗌𝗂𝗓𝖾 𝗅𝗂𝗆𝗂𝗍 𝗂𝗌 512 𝖬𝖡.")
 
-    msg = await message.reply_text("Processing...")
+    msg = await message.reply_text("𝖯𝗋𝗈𝖼𝖾𝗌𝗌𝗂𝗇𝗀...")
 
     try:
         downloaded_media = await reply.download()
 
         if not downloaded_media:
-            return await msg.edit_text("Something went wrong during download.")
+            return await msg.edit_text("𝖲𝗈𝗆𝖾𝗍𝗁𝗂𝗇𝗀 𝗐𝖾𝗇𝗍 𝗐𝗋𝗈𝗇𝗀 𝖽𝗎𝗋𝗂𝗇𝗀 𝗆𝗒 𝖽𝗈𝗐𝗇𝗅𝗈𝖺𝖽.")
 
         with open(downloaded_media, "rb") as f:
             data = f.read()
@@ -27,11 +27,11 @@ async def c_upload(client, message: Message):
             if resp.status_code == 200:
                 await msg.edit_text(f"`{resp.text}`")
             else:
-                await msg.edit_text("Something went wrong. Please try again later.")
+                await msg.edit_text("𝖲𝗈𝗆𝖾𝗍𝗁𝗂𝗇𝗀 𝗐𝖾𝗇𝗍 𝗐𝗋𝗈𝗇𝗀. 𝖯𝗅𝖾𝖺𝗌𝖾 𝗍𝗋𝗒 𝖺𝗀𝖺𝗂𝗇 𝗅𝖺𝗍𝖾𝗋.")
 
         os.remove(downloaded_media)
 
     except Exception as e:
-        await msg.edit_text(f"Error: {str(e)}")
+        await msg.edit_text(f"𝖤𝗋𝗋𝗈𝗋: {str(e)}")
 
 
