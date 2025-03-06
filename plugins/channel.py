@@ -70,19 +70,17 @@ async def send_movie_updates(bot, file_name, caption, file_id):
         for lang in nb_languages:
             if lang.lower() in caption.lower():
                 language += f"{lang}, "
-        language = language.strip(", ") or "Not Idea"
+        language = language.strip(", ") or "𝖭𝗈 𝖨𝖽𝖾𝖺"
         movie_name = await movie_name_format(file_name)    
         if movie_name in processed_movies:
             return 
         processed_movies.add(movie_name)    
         poster_url = await get_imdb(movie_name)
-        caption_message = f"#New_File_Added ✅\n\nFile_Name:- <code>{movie_name}</code>\n\nLanguage:- {language}\n\nQuality:- {quality}" 
+        caption_message = f"#New_File_Added ✅\n\n𝖥𝗂𝗅𝖾 𝖭𝖺𝗆𝖾:- <code>{movie_name}</code>\n\n𝖫𝖺𝗇𝗀𝗎𝖺𝗀𝖾:- {language}\n\n𝖰𝗎𝖺𝗅𝗂𝗍𝗒:- {quality}" 
         search_movie = movie_name.replace(" ", '-')
         movie_update_channel = await db.movies_update_channel_id()    
         btn = [[
-            InlineKeyboardButton('📂 ɢᴇᴛ ғɪʟᴇ 📂', url=f'https://telegram.me/{temp.U_NAME}?start=getfile-{search_movie}')
-        ],[
-            InlineKeyboardButton('♻️ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ♻️', url=f'https://t.me/JISSHU_BOTS')
+            InlineKeyboardButton('📂 𝗚𝗲𝘁 𝗙𝗶𝗹𝗲 📂', url=f'https://telegram.me/{temp.U_NAME}?start=getfile-{search_movie}')
         ]]
         reply_markup = InlineKeyboardMarkup(btn)
         if poster_url:
@@ -94,6 +92,6 @@ async def send_movie_updates(bot, file_name, caption, file_id):
                                  photo=no_poster, caption=caption_message, reply_markup=reply_markup)  
     except Exception as e:
         print('Failed to send movie update. Error - ', e)
-        await bot.send_message(LOG_CHANNEL, f'Failed to send movie update. Error - {e}')
+        await bot.send_message(LOG_CHANNEL, f'𝖥𝖺𝗂𝗅𝖾𝖽 𝗍𝗈 𝗌𝖾𝗇𝖽 𝗆𝗈𝗏𝗂𝖾 𝗎𝗉𝖽𝖺𝗍𝖾. 𝖤𝗋𝗋𝗈𝗋 - {e}')
     
   
