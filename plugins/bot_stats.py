@@ -21,12 +21,12 @@ async def save_group(bot, message):
             await bot.send_message(LOG_CHANNEL, script.NEW_GROUP_TXT.format(temp.B_LINK, message.chat.title, message.chat.id, message.chat.username, group_link, total, user), disable_web_page_preview=True)  
             await db.add_chat(message.chat.id, message.chat.title)
             btn = [[
-                InlineKeyboardButton('⚡️ sᴜᴘᴘᴏʀᴛ ⚡️', url=USERNAME)
+                InlineKeyboardButton('⚡️ 𝗦𝘂𝗽𝗽𝗼𝗿𝘁 ⚡️', url=USERNAME)
             ]]
             reply_markup=InlineKeyboardMarkup(btn)
             await bot.send_message(
                 chat_id=message.chat.id,
-                text=f"<b>☤ ᴛʜᴀɴᴋ ʏᴏᴜ ꜰᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ ɪɴ {message.chat.title}\n\n🤖 ᴅᴏɴ’ᴛ ꜰᴏʀɢᴇᴛ ᴛᴏ ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ 🤖\n\n㊝ ɪꜰ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ᴅᴏᴜʙᴛ ʏᴏᴜ ᴄʟᴇᴀʀ ɪᴛ ᴜsɪɴɢ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴs ㊜</b>",
+                text=f"<b>☤ 𝖳𝗁𝖺𝗇𝗄 𝗒𝗈𝗎 𝖿𝗈𝗋 𝖺𝖽𝖽𝗂𝗇𝗀 𝗆𝖾 𝗂𝗇 {message.chat.title}\n\n🤖 𝖣𝗈𝗇'𝗍 𝖿𝗈𝗋𝗀𝖾𝗍 𝗍𝗈 𝗆𝖺𝗄𝖾 𝗆𝖾 𝖺𝖽𝗆𝗂𝗇 🤖\n\n㊝ 𝖨𝖿 𝗒𝗈𝗎 𝗁𝖺𝗏𝖾 𝖺𝗇𝗒 𝖽𝗈𝗎𝖻𝗍 𝗒𝗈𝗎 𝖼𝗅𝖾𝖺𝗋 𝗂𝗍 𝗎𝗌𝗂𝗇𝗀 𝖻𝖾𝗅𝗈𝗐 𝖻𝗎𝗍𝗍𝗈𝗇𝗌 ㊜</b>",
                 reply_markup=reply_markup
             )
 
@@ -34,54 +34,54 @@ async def save_group(bot, message):
 async def leave_a_chat(bot, message):
     r = message.text.split(None)
     if len(message.command) == 1:
-        return await message.reply('<b>ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ʟɪᴋᴇ ᴛʜɪꜱ `/leave -100******`</b>')
+        return await message.reply('<b>𝖴𝗌𝖾 𝗍𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗅𝗂𝗄𝖾 𝗍𝗁𝗂𝗌 `/leave -100******`</b>')
     if len(r) > 2:
         reason = message.text.split(None, 2)[2]
         chat = message.text.split(None, 2)[1]
     else:
         chat = message.command[1]
-        reason = "ɴᴏ ʀᴇᴀꜱᴏɴ ᴘʀᴏᴠɪᴅᴇᴅ..."
+        reason = "𝖭𝗈 𝗋𝖾𝖺𝗌𝗈𝗇 𝗉𝗋𝗈𝗏𝗂𝖽𝖾𝖽..."
     try:
         chat = int(chat)
     except:
         chat = chat
     try:
         btn = [[
-            InlineKeyboardButton('⚡️ ᴏᴡɴᴇʀ ⚡️', url=USERNAME)
+            InlineKeyboardButton('⚡️ 𝗢𝘄𝗻𝗲𝗿 ⚡️', url=USERNAME)
         ]]
         reply_markup=InlineKeyboardMarkup(btn)
         await bot.send_message(
             chat_id=chat,
-            text=f'😞 ʜᴇʟʟᴏ ᴅᴇᴀʀ,\nᴍʏ ᴏᴡɴᴇʀ ʜᴀꜱ ᴛᴏʟᴅ ᴍᴇ ᴛᴏ ʟᴇᴀᴠᴇ ꜰʀᴏᴍ ɢʀᴏᴜᴘ ꜱᴏ ɪ ɢᴏ 😔\n\n🚫 ʀᴇᴀꜱᴏɴ ɪꜱ - <code>{reason}</code>\n\nɪꜰ ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ᴀᴅᴅ ᴍᴇ ᴀɢᴀɪɴ ᴛʜᴇɴ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴏᴡɴᴇʀ 👇',
+            text=f'😞 𝖧𝖾𝗅𝗅𝗈 𝖣𝖾𝖺𝗋,\n𝖬𝗒 𝗈𝗐𝗇𝖾𝗋 𝗁𝖺𝗌 𝗍𝗈𝗅𝖽 𝗆𝖾 𝗍𝗈 𝗅𝖾𝖺𝗏𝖾 𝖿𝗋𝗈𝗆 𝗍𝗁𝖾 𝗀𝗋𝗈𝗎𝗉 𝗌𝗈 𝖨 a𝗆 𝗅𝖾𝖺𝗏𝗂𝗇𝗀 😔\n\n🚫 𝖱𝖾𝖺𝗌𝗈𝗇 - <code>{reason}</code>\n\n𝖨𝖿 𝗒𝗈𝗎 𝗇𝖾𝖾𝖽 𝗍𝗈 𝖺𝖽𝖽 𝗆𝖾 𝖺𝗀𝖺𝗂𝗇 𝗍𝗁𝖾𝗇 𝖼𝗈𝗇𝗍𝖺𝖼𝗍 𝗆𝗒 𝗈𝗐𝗇𝖾𝗋 👇',
             reply_markup=reply_markup,
         )
         await bot.leave_chat(chat)
         await db.delete_chat(chat)
-        await message.reply(f"<b>ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ʟᴇꜰᴛ ꜰʀᴏᴍ ɢʀᴏᴜᴘ - `{chat}`</b>")
+        await message.reply(f"<b>𝖲𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 𝗅𝖾𝖿𝗍 𝖿𝗋𝗈𝗆 𝗀𝗋𝗈𝗎𝗉 - `{chat}`</b>")
     except Exception as e:
-        await message.reply(f'<b>🚫 ᴇʀʀᴏʀ - `{e}`</b>')
+        await message.reply(f'<b>🚫 𝖤𝗋𝗋𝗈𝗋 - `{e}`</b>')
 
 @Client.on_message(filters.command('groups') & filters.user(ADMINS))
 async def groups_list(bot, message):
-    msg = await message.reply('<b>Searching...</b>')
+    msg = await message.reply('<b>𝖲𝖾𝖺𝗋𝖼𝗁𝗂𝗇𝗀...</b>')
     chats = await db.get_all_chats()
-    out = "Groups saved in the database:\n\n"
+    out = "𝖦𝗋𝗈𝗎𝗉𝗌 𝗌𝖺𝗏𝖾𝖽 𝗂𝗇 𝗍𝗁𝖾 𝖽𝖺𝗍𝖺𝖻𝖺𝗌𝖾:\n\n"
     count = 1
     async for chat in chats:
         chat_info = await bot.get_chat(chat['id'])
         members_count = chat_info.members_count if chat_info.members_count else "Unknown"
-        out += f"<b>{count}. Title - `{chat['title']}`\nID - `{chat['id']}`\nMembers - `{members_count}`</b>"
+        out += f"<b>{count}. 𝖳𝗂𝗍𝗅𝖾 - `{chat['title']}`\n𝖨𝖣 - `{chat['id']}`\n𝖬𝖾𝗆𝖻𝖾𝗋𝗌 - `{members_count}`</b>"
         out += '\n\n'
         count += 1
     try:
         if count > 1:
             await msg.edit_text(out)
         else:
-            await msg.edit_text("<b>No groups found</b>")
+            await msg.edit_text("<b>𝖭𝗈 𝗀𝗋𝗈𝗎𝗉𝗌 𝖿𝗈𝗎𝗇𝖽</b>")
     except MessageTooLong:
         with open('chats.txt', 'w+') as outfile:
             outfile.write(out)
-        await message.reply_document('chats.txt', caption="<b>List of all groups</b>")
+        await message.reply_document('chats.txt', caption="<b>𝖫𝗂𝗌𝗍 𝗈𝖿 𝖺𝗅𝗅 𝗀𝗋𝗈𝗎𝗉𝗌</b>")
 
 @Client.on_message(filters.command('stats') & filters.user(ADMINS) & filters.incoming)
 async def get_ststs(bot, message):
