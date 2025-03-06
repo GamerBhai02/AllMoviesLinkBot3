@@ -22,7 +22,7 @@ async def add_redeem_code(client, message):
             time = message.command[1]
             num_codes = int(message.command[2])
         except ValueError:
-            await message.reply_text("Please provide a valid number of codes to generate.")
+            await message.reply_text("𝖯𝗅𝖾𝖺𝗌𝖾 𝗉𝗋𝗈𝗏𝗂𝖽𝖾 𝖺 𝗏𝖺𝗅𝗂𝖽 𝗇𝗎𝗆𝖻𝖾𝗋 𝗈𝖿 𝖼𝗈𝖽𝖾𝗌 𝗍𝗈 𝗀𝖾𝗇𝖾𝗋𝖺𝗍𝖾.")
             return
 
         codes = []
@@ -33,25 +33,25 @@ async def add_redeem_code(client, message):
 
         codes_text = '\n'.join(f"➔ <code>/redeem {code}</code>" for code in codes)
         response_text = f"""
-<b>Gɪғᴛᴄᴏᴅᴇ Gᴇɴᴇʀᴀᴛᴇᴅ ✅
-Aᴍᴏᴜɴᴛ:</b> {num_codes}
+<b>𝖦𝗂𝖿𝗍 𝖢𝗈𝖽𝖾 𝖦𝖾𝗇𝖾𝗋𝖺𝗍𝖾𝖽 ✅
+𝖠𝗆𝗈𝗎𝗇𝗍:</b> {num_codes}
 
 {codes_text}
-<b>Duration:</b> {time}
+<b>𝖣𝗎𝗋𝖺𝗍𝗂𝗈𝗇:</b> {time}
 
-🔰<u>𝗥𝗲𝗱𝗲𝗲𝗺 𝗜𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗶𝗼𝗻</u>🔰
-<b>𝙹𝚞𝚜𝚝 𝚌𝚕𝚒𝚌𝚔 𝚝𝚑𝚎 𝚊𝚋𝚘𝚟𝚎 𝚌𝚘𝚍𝚎 𝚝𝚘 𝚌𝚘𝚙𝚢 𝚊𝚗𝚍 𝚝𝚑𝚎𝚗 𝚜𝚎𝚗𝚍 𝚝𝚑𝚊𝚝 𝚌𝚘𝚍𝚎 𝚝𝚘 𝚝𝚑𝚎 𝙱𝚘𝚝, 𝚝𝚑𝚊𝚝'𝚜 𝚒𝚝 🔥</b>"""
+🔰<u>𝗥𝗲𝗱𝗲𝗲𝗺 𝗜𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗶𝗼𝗻𝘀</u>🔰
+<b>𝖩𝗎𝗌𝗍 𝖼𝗅𝗂𝖼𝗄 𝗍𝗁𝖾 𝖺𝖻𝗈𝗏𝖾 𝖼𝗈𝖽𝖾 𝗍𝗈 𝖼𝗈𝗉𝗒 𝖺𝗇𝖽 𝗍𝗁𝖾𝗇 𝗌𝖾𝗇𝖽 𝗍𝗁𝖺𝗍 𝖼𝗈𝖽𝖾 𝗍𝗈 𝗍𝗁𝖾 𝖡𝗈𝗍, 𝗍𝗁𝖺𝗍'𝗌 𝗂𝗍 🔥</b>"""
 
         keyboard = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("♻️ Redeem Here ♻️", url="http://t.me/NehaTestBot")],
-                [InlineKeyboardButton("❕ Any Query ❕", url="https://t.me/IM_JISSHU")]
+                [InlineKeyboardButton("♻️ 𝗥𝗲𝗱𝗲𝗲𝗺 𝗛𝗲𝗿𝗲 ♻️", url="http://t.me/AllMoviesLinkBot")],
+                [InlineKeyboardButton("❕ 𝗔𝗻𝘆 𝗛𝗲𝗹𝗽 ❕", url="https://t.me/GamerBhai02Bot")]
             ]
         )
 
         await message.reply_text(response_text, reply_markup=keyboard)
     else:
-        await message.reply_text("<b>♻ Usage:\n\n➩ <code>/add_redeem 1min 1</code>,\n➩ <code>/add_redeem 1hour 10</code>,\n➩ <code>/add_redeem 1day 5</code></b>")
+        await message.reply_text("<b>♻ 𝖴𝗌𝖺𝗀𝖾:\n\n➩ <code>/add_redeem 1min 1</code>,\n➩ <code>/add_redeem 1hour 10</code>,\n➩ <code>/add_redeem 1day 5</code></b>")
 
 @Client.on_message(filters.command("redeem"))
 async def redeem_code(client, message):
@@ -67,7 +67,7 @@ async def redeem_code(client, message):
                 try:
                     seconds = await get_seconds(time)
                 except Exception as e:
-                    await message.reply_text("Invalid time format in redeem code.")
+                    await message.reply_text("𝖨𝗇𝗏𝖺𝗅𝗂𝖽 𝗍𝗂𝗆𝖾 𝖿𝗈𝗋𝗆𝖺𝗍 𝗂𝗇 𝗋𝖾𝖽𝖾𝖾𝗆 𝖼𝗈𝖽𝖾.")
                     return
 
                 if seconds > 0:
@@ -80,9 +80,9 @@ async def redeem_code(client, message):
                         current_expiry = current_expiry.replace(tzinfo=pytz.utc)
 
                     if current_expiry and current_expiry > now_aware:
-                        expiry_str_in_ist = current_expiry.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ Expiry Time: %I:%M:%S %p")
+                        expiry_str_in_ist = current_expiry.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ 𝖤𝗑𝗉𝗂𝗋𝗒 𝖳𝗂𝗆𝖾: %I:%M:%S %p")
                         await message.reply_text(
-                            f"🚫 You already have premium access, which expires on {expiry_str_in_ist}.\nYou cannot redeem another code until your current premium expires.",
+                            f"🚫 𝖸𝗈𝗎 𝖺𝗅𝗋𝖾𝖺𝖽𝗒 𝗁𝖺𝗏𝖾 𝗉𝗋𝖾𝗆𝗂𝗎𝗆 𝖺𝖼𝖼𝖾𝗌𝗌, 𝗐𝗁𝗂𝖼𝗁 𝖾𝗑𝗉𝗂𝗋𝖾𝗌 𝗈𝗇 {expiry_str_in_ist}.\n𝖸𝗈𝗎 𝖼𝖺𝗇𝗇𝗈𝗍 𝗋𝖾𝖽𝖾𝖾𝗆 𝖺𝗇𝗈𝗍𝗁𝖾𝗋 𝖼𝗈𝖽𝖾 𝗎𝗇𝗍𝗂𝗅 𝗒𝗈𝗎𝗋 𝖼𝗎𝗋𝗋𝖾𝗇𝗍 𝗉𝗋𝖾𝗆𝗂𝗎𝗆 𝖾𝗑𝗉𝗂𝗋𝖾𝗌.",
                             disable_web_page_preview=True
                         )
                         return
@@ -91,23 +91,23 @@ async def redeem_code(client, message):
                     user_data = {"id": user_id, "expiry_time": expiry_time}
                     await db.update_user(user_data)
 
-                    expiry_str_in_ist = expiry_time.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ Expiry Time: %I:%M:%S %p")
+                    expiry_str_in_ist = expiry_time.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ 𝖤𝗑𝗉𝗂𝗋𝗒 𝖳𝗂𝗆𝖾: %I:%M:%S %p")
 
                     await message.reply_text(
-                        f"Premium activated successfully!\n\nUser: {user.mention}\nUser ID: {user_id}\nPremium Access: <code>{time}</code>\n\nExpiry Date: {expiry_str_in_ist}",
+                        f"𝖯𝗋𝖾𝗆𝗂𝗎𝗆 𝖺𝖼𝗍𝗂𝗏𝖺𝗍𝖾𝖽 𝗌𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒!\n\n𝖴𝗌𝖾𝗋: {user.mention}\nUser ID: {user_id}\n𝖯𝗋𝖾𝗆𝗂𝗎𝗆 𝖠𝖼𝖼𝖾𝗌𝗌: <code>{time}</code>\n\n𝖤𝗑𝗉𝗂𝗋𝗒 𝖣𝖺𝗍𝖾: {expiry_str_in_ist}",
                         disable_web_page_preview=True
                     )
 
                     await client.send_message(
                         LOG_CHANNEL,
-                        text=f"#Redeem_Premium\n\n👤 User: {user.mention}\n⚡ User ID: <code>{user_id}</code>\n⏰ Premium Access: <code>{time}</code>\n⌛️ Expiry Date: {expiry_str_in_ist}",
+                        text=f"#Redeemed_Premium\n\n👤 𝖴𝗌𝖾𝗋: {user.mention}\n⚡ 𝖴𝗌𝖾𝗋 𝖨𝖣: <code>{user_id}</code>\n⏰ 𝖯𝗋𝖾𝗆𝗂𝗎𝗆 𝖠𝖼𝖼𝖾𝗌𝗌: <code>{time}</code>\n⌛️ 𝖤𝗑𝗉𝗂𝗋𝗒 𝖣𝖺𝗍𝖾: {expiry_str_in_ist}",
                         disable_web_page_preview=True
                     )
                 else:
-                    await message.reply_text("Invalid time format in redeem code.")
+                    await message.reply_text("𝖨𝗇𝗏𝖺𝗅𝗂𝖽 𝗍𝗂𝗆𝖾 𝖿𝗈𝗋𝗆𝖺𝗍 𝗂𝗇 𝗋𝖾𝖽𝖾𝖾𝗆 𝖼𝗈𝖽𝖾.")
             except Exception as e:
-                await message.reply_text(f"An error occurred while redeeming the code: {e}")
+                await message.reply_text(f"𝖠𝗇 𝖾𝗋𝗋𝗈𝗋 𝗈𝖼𝖼𝗎𝗋𝗋𝖾𝖽 𝗐𝗁𝗂𝗅𝖾 𝗋𝖾𝖽𝖾𝖾𝗆𝗂𝗇𝗀 𝗍𝗁𝖾 𝖼𝗈𝖽𝖾: {e}")
         else:
-            await message.reply_text("Invalid Redeem Code or Expired.")
+            await message.reply_text("𝖨𝗇𝗏𝖺𝗅𝗂𝖽 𝖱𝖾𝖽𝖾𝖾𝗆 𝖢𝗈𝖽𝖾 𝗈𝗋 𝖤𝗑𝗉𝗂𝗋𝖾𝖽.")
     else:
-        await message.reply_text("Usage: /redeem <code>")
+        await message.reply_text("𝖴𝗌𝖺𝗀𝖾: /redeem <code>")
