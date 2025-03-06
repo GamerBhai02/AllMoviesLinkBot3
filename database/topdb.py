@@ -36,21 +36,21 @@ async def main():
     movie_series_db = JsTopDB(DATABASE_URI)
     while True:
         # Simulating a movie search
-        search_input = input("Enter the movie/series name: ")
-        group_id = input("Enter group ID: ")
+        search_input = input("𝖤𝗇𝗍𝖾𝗋 𝗍𝗁𝖾 𝗆𝗈𝗏𝗂𝖾/𝗌𝖾𝗋𝗂𝖾𝗌 𝗇𝖺𝗆𝖾: ")
+        group_id = input("𝖤𝗇𝗍𝖾𝗋 𝗀𝗋𝗈𝗎𝗉 𝖨𝖣: ")
         
         # Automatically set the movie/series name after search
         await movie_series_db.set_movie_series_names(search_input, group_id)
-        print("Movie/Series name added automatically.")
+        print("𝖬𝗈𝗏𝗂𝖾/𝖲𝖾𝗋𝗂𝖾𝗌 𝗇𝖺𝗆𝖾 𝖺𝖽𝖽𝖾𝖽 𝖺𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒.")
         
         # Print the updated list of names after each search
         names = await movie_series_db.get_movie_series_names(group_id)
-        print("Updated Movie/Series Names (Sorted by Search Count):")
+        print("𝖴𝗉𝖽𝖺𝗍𝖾𝖽 𝖬𝗈𝗏𝗂𝖾/𝖲𝖾𝗋𝗂𝖾𝗌 𝖭𝖺𝗆𝖾𝗌 (𝖲𝗈𝗋𝗍𝖾𝖽 𝖻𝗒 𝖲𝖾𝖺𝗋𝖼𝗁 𝖢𝗈𝗎𝗇𝗍):")
         for name in names:
             print(name)
         
         # Option to clear names (for testing purposes)
-        clear_input = input("Do you want to clear names for this group? (yes/no): ")
+        clear_input = input("𝖣𝗈 𝗒𝗈𝗎 𝗐𝖺𝗇𝗍 𝗍𝗈 𝖼𝗅𝖾𝖺𝗋 𝗇𝖺𝗆𝖾𝗌 𝖿𝗈𝗋 𝗍𝗁𝗂𝗌 𝗀𝗋𝗈𝗎𝗉? (𝗒𝖾𝗌/𝗇𝗈): ")
         if clear_input.lower() == "yes":
             await movie_series_db.clear_movie_series_names(group_id)
-            print("Names cleared successfully.")
+            print("𝖭𝖺𝗆𝖾𝗌 𝖼𝗅𝖾𝖺𝗋𝖾𝖽 𝗌𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒.")
