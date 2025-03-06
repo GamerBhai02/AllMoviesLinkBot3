@@ -10,16 +10,16 @@ from info import ADMINS, admin_cmds, cmds
 async def grp_cmds(client, message):
     user_id = message.from_user.id if message.from_user else None
     if not user_id:
-        return await message.reply("<b>💔 ʏᴏᴜ ᴀʀᴇ ᴀɴᴏɴʏᴍᴏᴜꜱ ᴀᴅᴍɪɴ ʏᴏᴜ ᴄᴀɴ'ᴛ ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ...</b>")
+        return await message.reply("<b>💔 𝖸𝗈𝗎 𝖺𝗋𝖾 𝖺𝗇𝗈𝗇𝗒𝗆𝗈𝗎𝗌 𝖺𝖽𝗆𝗂𝗇 𝗒𝗈𝗎 𝖼𝖺𝗇'𝗍 𝗎𝗌𝖾 𝗍𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽...</b>")
     chat_type = message.chat.type
     if chat_type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        return await message.reply_text("<code>ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ɪɴ ɢʀᴏᴜᴘ.</code>")
+        return await message.reply_text("<code>𝖴𝗌𝖾 𝗍𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗂𝗇 𝖺 𝗀𝗋𝗈𝗎𝗉.</code>")
     grp_id = message.chat.id
     if not await is_check_admin(client, grp_id, message.from_user.id):
-        return await message.reply_text('<b>ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴘ</b>')
+        return await message.reply_text('<b>𝖸𝗈𝗎 𝖺𝗋𝖾 𝗇𝗈𝗍 𝖺𝖽𝗆𝗂𝗇 𝗂𝗇 𝗍𝗁𝗂𝗌 𝗀𝗋𝗈𝗎𝗉</b>')
     #title = message.chat.title
     buttons = [[
-                InlineKeyboardButton('❌ ᴄʟᴏsᴇ ❌', callback_data='close_data')
+                InlineKeyboardButton('❌ 𝗖𝗹𝗼𝘀𝗲 ❌', callback_data='close_data')
             ]]        
     await message.reply_text(
         text=script.GROUP_C_TEXT,
@@ -40,7 +40,7 @@ async def admin_cmds(client, message):
     reply_markup = ReplyKeyboardMarkup(buttons, resize_keyboard=True, one_time_keyboard=True)
    
     sent_message = await message.reply(
-        "<b>Admin All Commands [auto delete 2 min] 👇</b>",
+        "<b>𝖠𝖽𝗆𝗂𝗇 𝖠𝗅𝗅 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌 [𝖺𝗎𝗍𝗈 𝖽𝖾𝗅𝖾𝗍𝖾 2 𝗆𝗂𝗇] 👇</b>",
         reply_markup=reply_markup,
     ) 
     #  2 minutes (120 seconds)
@@ -57,4 +57,4 @@ async def set_commands(client, message):
             commands.append(BotCommand(command, description))
 
     await client.set_bot_commands(commands)
-    await message.reply("Set command successfully✅ ")
+    await message.reply("𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌 𝗌𝖾𝗍 𝗌𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 ✅ ")
