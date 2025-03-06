@@ -30,13 +30,13 @@ verification_ids = {}
 async def invite(client, message):
     toGenInvLink = message.command[1]
     if len(toGenInvLink) != 14:
-        return await message.reply("Invalid chat id\nAdd -100 before chat id if You did not add any yet.") 
+        return await message.reply("𝖨𝗇𝗏𝖺𝗅𝗂𝖽 𝖼𝗁𝖺𝗍 𝗂𝖽\n𝖠𝖽𝖽 -100 𝖻𝖾𝖿𝗈𝗋𝖾 𝖼𝗁𝖺𝗍 𝗂𝖽 𝗂𝖿 𝗒𝗈𝗎 𝖽𝗂𝖽 𝗇𝗈𝗍 𝖺𝖽𝖽 𝗒𝖾𝗍.") 
     try:
         link = await client.export_chat_invite_link(toGenInvLink)
         await message.reply(link)
     except Exception as e:
-        print(f'Error while generating invite link : {e}\nFor chat:{toGenInvLink}')
-        await message.reply(f'Error while generating invite link : {e}\nFor chat:{toGenInvLink}')
+        print(f'𝖤𝗋𝗋𝗈𝗋 𝗐𝗁𝗂𝗅𝖾 𝗀𝖾𝗇𝖾𝗋𝖺𝗍𝗂𝗇𝗀 𝗂𝗇𝗏𝗂𝗍𝖾 𝗅𝗂𝗇𝗄 : {e}\n𝖥𝗈𝗋 𝖼𝗁𝖺𝗍:{toGenInvLink}')
+        await message.reply(f'𝖤𝗋𝗋𝗈𝗋 𝗐𝗁𝗂𝗅𝖾 𝗀𝖾𝗇𝖾𝗋𝖺𝗍𝗂𝗇𝗀 𝗂𝗇𝗏𝗂𝗍𝖾 𝗅𝗂𝗇𝗄 : {e}\n𝖥𝗈𝗋 𝖼𝗁𝖺𝗍:{toGenInvLink}')
 
 
 @Client.on_message(filters.command("start") & filters.incoming)
@@ -58,7 +58,7 @@ async def start(client:Client, message):
         settings = await get_settings(grp_id)         
         verify_id_info = await db.get_verify_id_info(user_id, verify_id)
         if not verify_id_info or verify_id_info["verified"]:
-            await message.reply("<b>ʟɪɴᴋ ᴇxᴘɪʀᴇᴅ ᴛʀʏ ᴀɢᴀɪɴ...</b>")
+            await message.reply("<b>𝖫𝗂𝗇𝗄 𝖤𝗑𝗉𝗂𝗋𝖾𝖽 𝖳𝗋𝗒 𝖠𝗀𝖺𝗂𝗇...</b>")
             return  
         ist_timezone = pytz.timezone('Asia/Kolkata')
         if await db.user_verified(user_id):
@@ -78,7 +78,7 @@ async def start(client:Client, message):
             msg = script.SECOND_VERIFY_COMPLETE_TEXT if key == "second_time_verified" else script.VERIFY_COMPLETE_TEXT
         await client.send_message(settings['log'], script.VERIFIED_LOG_TEXT.format(m.from_user.mention, user_id, dt.now(pytz.timezone('Asia/Kolkata')).strftime('%d %B %Y'), num))
         btn = [[
-            InlineKeyboardButton("‼️ ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ɢᴇᴛ ꜰɪʟᴇ ‼️", url=f"https://telegram.me/{temp.U_NAME}?start=file_{grp_id}_{file_id}"),
+            InlineKeyboardButton("‼️ 𝗖𝗹𝗶𝗰𝗸 𝗵𝗲𝗿𝗲 𝘁𝗼 𝗚𝗲𝘁 𝗙𝗶𝗹𝗲 ‼️", url=f"https://telegram.me/{temp.U_NAME}?start=file_{grp_id}_{file_id}"),
         ]]
         reply_markup=InlineKeyboardMarkup(btn)
         await m.reply_photo(
@@ -93,16 +93,16 @@ async def start(client:Client, message):
         try:
             user_id = int(message.command[1].split("_")[1])
         except ValueError:
-            await message.reply_text("Iɴᴠᴀʟɪᴅ ʀᴇғᴇʀ⁉️")
+            await message.reply_text("𝖨𝗇𝗏𝖺𝗅𝗂𝖽 𝖱𝖾𝖿𝖾𝗋⁉️")
             return
         if user_id == message.from_user.id:
-            await message.reply_text("Hᴇʏ ᴅᴜᴅᴇ, ʏᴏᴜ ᴄᴀɴ ɴᴏᴛ ʀᴇғᴇʀ ʏᴏᴜʀsᴇʟғ⁉️")
+            await message.reply_text("𝖧𝖾𝗒 𝖣𝗎𝖽𝖾, 𝗒𝗈𝗎 𝖼𝖺𝗇𝗇𝗈𝗍 𝗋𝖾𝖿𝖾𝗋 𝗒𝗈𝗎𝗋𝗌𝖾𝗅𝖿⁉️")
             return
         if referdb.is_user_in_list(message.from_user.id):
-            await message.reply_text("‼️ Yᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ ᴀʟʀᴇᴀᴅʏ ɪɴᴠɪᴛᴇᴅ ᴏʀ ᴊᴏɪɴᴇᴅ")
+            await message.reply_text("‼️ 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝖺𝗅𝗋𝖾𝖺𝖽𝗒 𝖻𝖾𝖾𝗇 𝗂𝗇𝗏𝗂𝗍𝖾𝖽 𝗈𝗋 𝗃𝗈𝗂𝗇𝖾𝖽")
             return
         if await db.is_user_exist(message.from_user.id): 
-            await message.reply_text("‼️ Yᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ ᴀʟʀᴇᴀᴅʏ ɪɴᴠɪᴛᴇᴅ ᴏʀ ᴊᴏɪɴᴇᴅ")
+            await message.reply_text("‼️ 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝖺𝗅𝗋𝖾𝖺𝖽𝗒 𝖻𝖾𝖾𝗇 𝗂𝗇𝗏𝗂𝗍𝖾𝖽 𝗈𝗋 𝗃𝗈𝗂𝗇𝖾𝖽")
             return            
         try:
             uss = await client.get_users(user_id)
@@ -112,13 +112,13 @@ async def start(client:Client, message):
         fromuse = referdb.get_refer_points(user_id) + 10
         if fromuse == 100:
             referdb.add_refer_points(user_id, 0) 
-            await message.reply_text(f"𝙔𝙤𝙪 𝙝𝙖𝙫𝙚 𝙗𝙚𝙚𝙣 𝙨𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 𝙞𝙣𝙫𝙞𝙩𝙚𝙙 𝙗𝙮 {uss.mention}!") 
-            await client.send_message(user_id, text=f"𝙔𝙤𝙪 𝙝𝙖𝙫𝙚 𝙗𝙚𝙚𝙣 𝙨𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 𝙞𝙣𝙫𝙞𝙩𝙚𝙙 𝙗𝙮 {message.from_user.mention}!") 
+            await message.reply_text(f"𝗬𝗼𝘂 𝗵𝗮𝘃𝗲 𝗯𝗲𝗲𝗻 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗶𝗻𝘃𝗶𝘁𝗲𝗱 𝗯𝘆  {uss.mention}!") 
+            await client.send_message(user_id, text=f"𝗬𝗼𝘂 𝗵𝗮𝘃𝗲 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗶𝗻𝘃𝗶𝘁𝗲𝗱  {message.from_user.mention}!") 
             await add_premium(client, user_id, uss)
         else:
             referdb.add_refer_points(user_id, fromuse)
-            await message.reply_text(f"𝙔𝙤𝙪 𝙝𝙖𝙫𝙚 𝙗𝙚𝙚𝙣 𝙨𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 𝙞𝙣𝙫𝙞𝙩𝙚𝙙 𝙗𝙮 {uss.mention}!")
-            await client.send_message(user_id, f"𝙔𝙤𝙪 𝙝𝙖𝙫𝙚 𝙨𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 𝙞𝙣𝙫𝙞𝙩𝙚𝙙 {message.from_user.mention}!")
+            await message.reply_text(f"𝗬𝗼𝘂 𝗵𝗮𝘃𝗲 𝗯𝗲𝗲𝗻 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗶𝗻𝘃𝗶𝘁𝗲𝗱 𝗯𝘆  {uss.mention}!")
+            await client.send_message(user_id, f"𝗬𝗼𝘂 𝗵𝗮𝘃𝗲 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗶𝗻𝘃𝗶𝘁𝗲𝗱  {message.from_user.mention}!")
         return
 
     if len(message.command) == 2 and message.command[1].startswith('getfile'):
@@ -134,7 +134,7 @@ async def start(client:Client, message):
         seen_ads = user.get("seen_ads", False)
         JISSHU_ADS_LINK = await db.jisshu_get_ads_link()
         buttons = [[
-                    InlineKeyboardButton('❌ ᴄʟᴏꜱᴇ ❌', callback_data='close_data')
+                    InlineKeyboardButton('❌ 𝗖𝗹𝗼𝘀𝗲 ❌', callback_data='close_data')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         if msg:
@@ -149,7 +149,7 @@ async def start(client:Client, message):
                 await mdb.update_advirtisment_impression(int(impression) - 1)
                 await db.update_value(message.from_user.id, "seen_ads", True)
         else:
-            await message.reply("<b>No Ads Found</b>")
+            await message.reply("<b>𝖭𝗈 𝖠𝖽𝗌 𝖥𝗈𝗎𝗇𝖽</b>")
 
         await mdb.reset_advertisement_if_expired()
 
@@ -159,7 +159,7 @@ async def start(client:Client, message):
     
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         status = get_status()
-        aks=await message.reply_text(f"<b>🔥 ʏᴇs {status},\nʜᴏᴡ ᴄᴀɴ ɪ ʜᴇʟᴘ ʏᴏᴜ??</b>")
+        aks=await message.reply_text(f"<b>🔥 𝖸𝖾𝗌 {status},\n𝖧𝗈𝗐 𝖼𝖺𝗇 𝗂 𝗁𝖾𝗅𝗉 𝗒𝗈𝗎??</b>")
         await asyncio.sleep(600)
         await aks.delete()
         await m.delete()
@@ -182,19 +182,19 @@ async def start(client:Client, message):
          #       newPoint = await db.get_point(refUserId)
              if AUTH_CHANNEL and await is_req_subscribed(client, message):
                         buttons = [[
-                            InlineKeyboardButton('☆ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
+                            InlineKeyboardButton('☆ 𝖠𝖽𝖽 𝖬𝖾 𝗍𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
                         ],[
-                            InlineKeyboardButton("Hᴇʟᴘ ⚙️", callback_data='features'),
-                            InlineKeyboardButton('Aʙᴏᴜᴛ 💌', callback_data=f'about')
+                            InlineKeyboardButton("𝖧𝖾𝗅𝗉 ⚙️", callback_data='features'),
+                            InlineKeyboardButton('𝖠𝖻𝗈𝗎𝗍 💌', callback_data=f'about')
                         ],[
-                            InlineKeyboardButton('Pʀᴇᴍɪᴜᴍ 🎫', callback_data='seeplans'),
-                            InlineKeyboardButton('Rᴇғᴇʀ ⚜️', callback_data="reffff")
+                            InlineKeyboardButton('𝖯𝗋𝖾𝗆𝗂𝗎𝗆 🎫', callback_data='seeplans'),
+                            InlineKeyboardButton('𝖱𝖾𝖿𝖾𝗋 ⚜️', callback_data="reffff")
                         ],[
-                            InlineKeyboardButton('Mᴏsᴛ Sᴇᴀʀᴄʜ 🔍', callback_data="mostsearch"),
-                            InlineKeyboardButton('Tᴏᴘ Tʀᴇɴᴅɪɴɢ ⚡', callback_data="trending")
+                            InlineKeyboardButton('𝖬𝗈𝗌𝗍 𝖲𝖾𝖺𝗋𝖼𝗁𝖾𝖽 🔍', callback_data="mostsearch"),
+                            InlineKeyboardButton('𝖳𝗈𝗉 𝖳𝗋𝖾𝗇𝖽𝗂𝗇𝗀 ⚡', callback_data="trending")
                         ]] 
                         reply_markup = InlineKeyboardMarkup(buttons)
-                        m=await message.reply_sticker("CAACAgQAAxkBAAEn9_ZmGp1uf1a38UrDhitnjOOqL1oG3gAC9hAAAlC74FPEm2DxqNeOmB4E") 
+                        m=await message.reply_sticker("CAACAgUAAxkBAAEN_ednyS4y5ZzxCHbLREN451YQI__J6gACCBQAAlnpSFb4TrqdAvsUsTYE") 
                         await asyncio.sleep(1)
                         await m.delete()
                         await message.reply_photo(photo=random.choice(START_IMG), caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
@@ -211,19 +211,19 @@ async def start(client:Client, message):
             pass
     if len(message.command) != 2:
         buttons = [[
-                            InlineKeyboardButton('☆ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
+                            InlineKeyboardButton('☆ 𝖠𝖽𝖽 𝖬𝖾 𝗍𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
                         ],[
-                            InlineKeyboardButton("Hᴇʟᴘ ⚙️", callback_data='features'),
-                            InlineKeyboardButton('Aʙᴏᴜᴛ 💌', callback_data=f'about')
+                            InlineKeyboardButton("𝖧𝖾𝗅𝗉 ⚙️", callback_data='features'),
+                            InlineKeyboardButton('𝖠𝖻𝗈𝗎𝗍 💌', callback_data=f'about')
                         ],[
-                            InlineKeyboardButton('Pʀᴇᴍɪᴜᴍ 🎫', callback_data='seeplans'),
-                            InlineKeyboardButton('Rᴇғᴇʀ ⚜️', callback_data="reffff")
+                            InlineKeyboardButton('𝖯𝗋𝖾𝗆𝗂𝗎𝗆 🎫', callback_data='seeplans'),
+                            InlineKeyboardButton('𝖱𝖾𝖿𝖾𝗋 ⚜️', callback_data="reffff")
                         ],[
-                            InlineKeyboardButton('Mᴏsᴛ Sᴇᴀʀᴄʜ 🔍', callback_data="mostsearch"),
-                            InlineKeyboardButton('Tᴏᴘ Tʀᴇɴᴅɪɴɢ ⚡', callback_data="trending")
+                            InlineKeyboardButton('𝖬𝗈𝗌𝗍 𝖲𝖾𝖺𝗋𝖼𝗁𝖾𝖽 🔍', callback_data="mostsearch"),
+                            InlineKeyboardButton('𝖳𝗈𝗉 𝖳𝗋𝖾𝗇𝖽𝗂𝗇𝗀 ⚡', callback_data="trending")
                         ]] 
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await message.reply_sticker("CAACAgQAAxkBAAEn9_ZmGp1uf1a38UrDhitnjOOqL1oG3gAC9hAAAlC74FPEm2DxqNeOmB4E") 
+        m=await message.reply_sticker("CAACAgUAAxkBAAEN_ednyS4y5ZzxCHbLREN451YQI__J6gACCBQAAlnpSFb4TrqdAvsUsTYE") 
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_photo(photo=random.choice(START_IMG), caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
@@ -273,16 +273,16 @@ async def start(client:Client, message):
 
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('☆ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
+            InlineKeyboardButton('☆ 𝖠𝖽𝖽 𝖬𝖾 𝗍𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
                         ],[
-                            InlineKeyboardButton("Hᴇʟᴘ ⚙️", callback_data='features'),
-                            InlineKeyboardButton('Aʙᴏᴜᴛ 💌', callback_data=f'about')
+                            InlineKeyboardButton("𝖧𝖾𝗅𝗉 ⚙️", callback_data='features'),
+                            InlineKeyboardButton('𝖠𝖻𝗈𝗎𝗍 💌', callback_data=f'about')
                         ],[
-                            InlineKeyboardButton('Pʀᴇᴍɪᴜᴍ 🎫', callback_data='seeplans'),
-                            InlineKeyboardButton('Rᴇғᴇʀ ⚜️', callback_data="reffff")
+                            InlineKeyboardButton('𝖯𝗋𝖾𝗆𝗂𝗎𝗆 🎫', callback_data='seeplans'),
+                            InlineKeyboardButton('𝖱𝖾𝖿𝖾𝗋 ⚜️', callback_data="reffff")
                         ],[
-                            InlineKeyboardButton('Mᴏsᴛ Sᴇᴀʀᴄʜ 🔍', callback_data="mostsearch"),
-                            InlineKeyboardButton('Tᴏᴘ Tʀᴇɴᴅɪɴɢ ⚡', callback_data="trending")
+                            InlineKeyboardButton('𝖬𝗈𝗌𝗍 𝖲𝖾𝖺𝗋𝖼𝗁𝖾𝖽 🔍', callback_data="mostsearch"),
+                            InlineKeyboardButton('𝖳𝗈𝗉 𝖳𝗋𝖾𝗇𝖽𝗂𝗇𝗀 ⚡', callback_data="trending")
                         ]] 
         reply_markup = InlineKeyboardMarkup(buttons)
         return await message.reply_photo(photo=START_IMG, caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
