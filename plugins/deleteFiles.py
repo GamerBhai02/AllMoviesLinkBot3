@@ -22,4 +22,4 @@ async def deletemultiplemedia(bot, message):
                 logger.warning(f"File {media.file_name} with ID {file_id} not found in database")
         except Exception as e:
             logger.error(f"Error deleting file {media.file_name} with ID {file_id}: {str(e)}")
-            await bot.send_message(LOG_CHANNEL, f"Error deleting file {media.file_name}: {str(e)}")
+            await bot.send_message(LOG_CHANNEL, f"𝖤𝗋𝗋𝗈𝗋 𝖽𝖾𝗅𝖾𝗍𝗂𝗇𝗀 𝖿𝗂𝗅𝖾 {media.file_name}: {str(e)}")
