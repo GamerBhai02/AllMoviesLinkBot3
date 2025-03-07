@@ -1,5 +1,5 @@
 FROM python:3.12-slim
-WORKDIR /Jisshubot
+WORKDIR /AllMoviesLinkBot
 RUN apt-get update && \
     apt-get install --no-install-recommends -y git gcc libjpeg-dev zlib1g-dev && \
     rm -rf /var/lib/apt/lists/*
