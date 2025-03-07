@@ -930,7 +930,7 @@ async def set_time_2(client, message):
     if chat_type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         return await message.reply_text("<b>𝖴𝗌𝖾 𝗍𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗂𝗇 𝗀𝗋𝗈𝗎𝗉...</b>")       
     if not userid:
-        return await message.reply("<b>ʏᴏᴜ ᴀʀᴇ ᴀɴᴏɴʏᴍᴏᴜꜱ ᴀᴅᴍɪɴ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴘ...</b>")
+        return await message.reply("<b>𝖸𝗈𝗎 𝖺𝗋𝖾 𝖺𝗇𝗈𝗇𝗒𝗆𝗈𝗎𝗌 𝖺𝖽𝗆𝗂𝗇 𝗂𝗇 𝗍𝗁𝗂𝗌 𝗀𝗋𝗈𝗎𝗉...</b>")
     grp_id = message.chat.id
     title = message.chat.title
     if not await is_check_admin(client, grp_id, message.from_user.id):
@@ -940,13 +940,13 @@ async def set_time_2(client, message):
     except:
         return await message.reply_text("𝖢𝗈𝗆𝗆𝖺𝗇𝖽 𝖨𝗇𝖼𝗈𝗆𝗉𝗅𝖾𝗍𝖾!")   
     await save_group_settings(grp_id, 'verify_time', time)
-    await message.reply_text(f"Successfully set 1st verify time for {title}\n\nTime is - <code>{time}</code>")
+    await message.reply_text(f"𝖲𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 𝗌𝖾𝗍 1𝗌𝗍 𝗏𝖾𝗋𝗂𝖿𝗒 𝗍𝗂𝗆𝖾 𝖿𝗈𝗋 {title}\n\n𝖳𝗂𝗆𝖾 𝗂𝗌 - <code>{time}</code>")
 
 @Client.on_message(filters.command('set_time_3'))
 async def set_time_3(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
-        return await message.reply("<b>ʏᴏᴜ ᴀʀᴇ ᴀɴᴏɴʏᴍᴏᴜꜱ ᴀᴅᴍɪɴ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴘ...</b>")
+        return await message.reply("<b>𝖸𝗈𝗎 𝖺𝗋𝖾 𝖺𝗇𝗈𝗇𝗒𝗆𝗈𝗎𝗌 𝖺𝖽𝗆𝗂𝗇 𝗂𝗇 𝗍𝗁𝗂𝗌 𝗀𝗋𝗈𝗎𝗉...</b>")
     chat_type = message.chat.type
     if chat_type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         return await message.reply_text("<b>𝖴𝗌𝖾 𝗍𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗂𝗇 𝗀𝗋𝗈𝗎𝗉...</b>")       
@@ -959,7 +959,7 @@ async def set_time_3(client, message):
     except:
         return await message.reply_text("𝖢𝗈𝗆𝗆𝖺𝗇𝖽 𝖨𝗇𝖼𝗈𝗆𝗉𝗅𝖾𝗍𝖾!")   
     await save_group_settings(grp_id, 'third_verify_time', time)
-    await message.reply_text(f"Successfully set 1st verify time for {title}\n\nTime is - <code>{time}</code>")
+    await message.reply_text(f"𝖲𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 𝗌𝖾𝗍 1𝗌𝗍 𝗏𝖾𝗋𝗂𝖿𝗒 𝗍𝗂𝗆𝖾 𝖿𝗈𝗋 {title}\n\n𝖳𝗂𝗆𝖾 𝗂𝗌 - <code>{time}</code>")
 
 
 @Client.on_callback_query(filters.regex("mostsearch"))
@@ -990,7 +990,7 @@ async def most(client, callback_query):
         placeholder="Most searches of the day"
     )
     
-    await callback_query.message.reply_text("<b>Hᴇʀᴇ ɪꜱ ᴛʜᴇ ᴍᴏꜱᴛ ꜱᴇᴀʀᴄʜᴇꜱ ʟɪꜱᴛ 👇</b>", reply_markup=reply_markup)
+    await callback_query.message.reply_text("<b>𝖧𝖾𝗋𝖾 𝗂𝗌 𝗍𝗁𝖾 𝖬𝗈𝗌𝗍 𝖲𝖾𝖺𝗋𝖼𝗁𝖾𝗌 𝗅𝗂𝗌𝗍 👇</b>", reply_markup=reply_markup)
     await callback_query.answer()
 
 
@@ -998,28 +998,28 @@ async def most(client, callback_query):
 async def top(client, query):
     movie_series_names = await movie_series_db.get_movie_series_names(1)
     if not movie_series_names:
-        await query.message.reply("Tʜᴇʀᴇ ᴀʀᴇ ɴᴏ ᴍᴏᴠɪᴇ ᴏʀ sᴇʀɪᴇs ɴᴀᴍᴇs ᴀᴠᴀɪʟᴀʙʟᴇ ғᴏʀ ᴛʜᴇ ᴛᴏᴘ sᴇᴀʀᴄʜᴇs.")
+        await query.message.reply("𝖳𝗁𝖾𝗋𝖾 𝖺𝗋𝖾 𝗇𝗈 𝖬𝗈𝗏𝗂𝖾𝗌 𝗈𝗋 𝖲𝖾𝗋𝗂𝖾𝗌 𝗇𝖺𝗆𝖾𝗌 𝖺𝗏𝖺𝗂𝗅𝖺𝖻𝗅𝖾 𝖿𝗈𝗋 𝗍𝗁𝖾 𝖳𝗈𝗉 𝖲𝖾𝖺𝗋𝖼𝗁𝖾𝗌.")
         return
     buttons = [movie_series_names[i:i + 2] for i in range(0, len(movie_series_names), 2)]
     spika = ReplyKeyboardMarkup(
         buttons,
         resize_keyboard=True
     )
-    await query.message.reply("<b>Here Is The Top Trending List 👇</b>", reply_markup=spika)
+    await query.message.reply("<b>𝖧𝖾𝗋𝖾 𝗂𝗌 𝗍𝗁𝖾 𝖳𝗈𝗉 𝖳𝗋𝖾𝗇𝖽𝗂𝗇𝗀 𝗅𝗂𝗌𝗍 👇</b>", reply_markup=spika)
     
 @Client.on_message(filters.command("refer"))
 async def refer(bot, message):
     btn = [[
-        InlineKeyboardButton('invite link', url=f'https://telegram.me/share/url?url=https://t.me/{bot.me.username}?start=reff_{message.from_user.id}&text=Hello%21%20Experience%20a%20bot%20that%20offers%20a%20vast%20library%20of%20unlimited%20movies%20and%20series.%20%F0%9F%98%83'),
+        InlineKeyboardButton('𝖨𝗇𝗏𝗂𝗍𝖾 𝖫𝗂𝗇𝗄', url=f'https://telegram.me/share/url?url=https://t.me/{bot.me.username}?start=reff_{message.from_user.id}&text=Hello%21%20Experience%20a%20bot%20that%20offers%20a%20vast%20library%20of%20unlimited%20movies%20and%20series.%20%F0%9F%98%83'),
         InlineKeyboardButton(f'⏳ {referdb.get_refer_points(message.from_user.id)}', callback_data='ref_point'),
-        InlineKeyboardButton('Close', callback_data='close_data')
+        InlineKeyboardButton('𝖢𝗅𝗈𝗌𝖾', callback_data='close_data')
     ]]  
-    m=await message.reply_sticker("CAACAgQAAxkBAAEkt_Rl_7138tgHJdEsqSNzO5mPWioZDgACGRAAAudLcFGAbsHU3KNJUx4E")      
-    await m.delete()
+    #m=await message.reply_sticker("CAACAgQAAxkBAAEkt_Rl_7138tgHJdEsqSNzO5mPWioZDgACGRAAAudLcFGAbsHU3KNJUx4E")      
+    #await m.delete()
     reply_markup = InlineKeyboardMarkup(btn)
     await message.reply_photo(
             photo=random.choice(REFER_PICS),
-            caption=f'👋Hay {message.from_user.mention},\n\nHᴇʀᴇ ɪꜱ ʏᴏᴜʀ ʀᴇғғᴇʀᴀʟ ʟɪɴᴋ:\nhttps://t.me/{bot.me.username}?start=reff_{message.from_user.id}\n\nShare this link with your friends, Each time they join,  you will get 10 refferal points and after 100 points you will get 1 month premium subscription.',
+            caption=f'👋𝖧𝖾𝗒 {message.from_user.mention},\n\n𝖧𝖾𝗋𝖾 𝗂𝗌 𝗒𝗈𝗎𝗋 𝖱𝖾𝖿𝖾𝗋𝗋𝖺𝗅 𝖫𝗂𝗇𝗄:\nhttps://t.me/{bot.me.username}?start=reff_{message.from_user.id}\n\n𝖲𝗁𝖺𝗋𝖾 𝗍𝗁𝗂𝗌 𝗅𝗂𝗇𝗄 𝗐𝗂𝗍𝗁 𝗒𝗈𝗎𝗋 𝖿𝗋𝗂𝖾𝗇𝖽𝗌, 𝖾𝖺𝖼𝗁 𝗍𝗂𝗆𝖾 𝗍𝗁𝖾𝗒 𝗃𝗈𝗂𝗇, 𝗒𝗈𝗎 𝗐𝗂𝗅𝗅 𝗀𝖾𝗍 10 𝗋𝖾𝖿𝖾𝗋𝗋𝖺𝗅 𝗉𝗈𝗂𝗇𝗍𝗌 𝖺𝗇𝖽 𝖺𝖿𝗍𝖾𝗋 100 𝗉𝗈𝗂𝗇𝗍𝗌 𝗒𝗈𝗎 𝗐𝗂𝗅𝗅 𝗀𝖾𝗍 1-𝗆𝗈𝗇𝗍𝗁 𝗉𝗋𝖾𝗆𝗂𝗎𝗆 𝗌𝗎𝖻𝗌𝖼𝗋𝗂𝗉𝗍𝗂𝗈𝗇.',
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
     )
@@ -1033,7 +1033,7 @@ async def set_pm_search_on(client, message):
         return
     
     await db.update_pm_search_status(bot_id, enable=True)
-    await message.reply_text("<b><i>✅️ ᴘᴍ ꜱᴇᴀʀᴄʜ ᴇɴᴀʙʟᴇᴅ, ꜰʀᴏᴍ ɴᴏᴡ ᴜꜱᴇʀꜱ ᴀʙʟᴇ ᴛᴏ ꜱᴇᴀʀᴄʜ ᴍᴏᴠɪᴇ ɪɴ ʙᴏᴛ ᴘᴍ.</i></b>")
+    await message.reply_text("<b><i>✅️ 𝖯𝖬 𝗌𝖾𝖺𝗋𝖼𝗁 𝖾𝗇𝖺𝖻𝗅𝖾𝖽, 𝖿𝗋𝗈𝗆 𝗇𝗈𝗐 𝗎𝗌𝖾𝗋𝗌 𝖺𝖻𝗅𝖾 𝗍𝗈 𝗌𝖾𝖺𝗋𝖼𝗁 𝖿𝗂𝗅𝖾𝗌 𝗂𝗇 𝖻𝗈𝗍 𝗉𝗆.</i></b>")
 
 @Client.on_message(filters.private & filters.command("pm_search_off"))
 async def set_pm_search_off(client, message):
@@ -1044,7 +1044,7 @@ async def set_pm_search_off(client, message):
         return
     
     await db.update_pm_search_status(bot_id, enable=False)
-    await message.reply_text("<b><i>❌️ ᴘᴍ ꜱᴇᴀʀᴄʜ ᴅɪꜱᴀʙʟᴇᴅ, ꜰʀᴏᴍ ɴᴏᴡ ɴᴏ ᴏɴᴇ ᴄᴀɴ ᴀʙʟᴇ ᴛᴏ ꜱᴇᴀʀᴄʜ ᴍᴏᴠɪᴇ ɪɴ ʙᴏᴛ ᴘᴍ.</i></b>")
+    await message.reply_text("<b><i>❌️ 𝖯𝖬 𝗌𝖾𝖺𝗋𝖼𝗁 𝖽𝗂𝗌𝖺𝖻𝗅𝖾𝖽, 𝖿𝗋𝗈𝗆 𝗇𝗈𝗐 𝗇𝗈 𝗈𝗇𝖾 𝗐𝗂𝗅𝗅 𝖻𝖾 𝖺𝖻𝗅𝖾 𝗍𝗈 𝗌𝖾𝖺𝗋𝖼𝗁 𝖿𝗂𝗅𝖾𝗌 𝗂𝗇 𝖻𝗈𝗍 𝗉𝗆.</i></b>")
 
 
 @Client.on_message(filters.private & filters.command("movie_update_on"))
@@ -1055,7 +1055,7 @@ async def set_send_movie_on(client, message):
         await message.delete()
         return    
     await db.update_send_movie_update_status(bot_id, enable=True)
-    await message.reply_text("<b><i>✅️ ꜱᴇɴᴅ ᴍᴏᴠɪᴇ ᴜᴘᴅᴀᴛᴇ ᴇɴᴀʙʟᴇᴅ.</i></b>")
+    await message.reply_text("<b><i>✅️ 𝖲𝖾𝗇𝖽𝗂𝗇𝗀 𝖬𝗈𝗏𝗂𝖾 𝖴𝗉𝖽𝖺𝗍𝖾𝗌 𝖤𝗇𝖺𝖻𝗅𝖾𝖽.</i></b>")
 
 @Client.on_message(filters.private & filters.command("movie_update_off"))
 async def set_send_movie_update_off(client, message):
@@ -1065,54 +1065,54 @@ async def set_send_movie_update_off(client, message):
         await message.delete()
         return    
     await db.update_send_movie_update_status(bot_id, enable=False)
-    await message.reply_text("<b><i>❌️ ꜱᴇɴᴅ ᴍᴏᴠɪᴇ ᴜᴘᴅᴀᴛᴇ ᴅɪꜱᴀʙʟᴇᴅ.</i></b>")
+    await message.reply_text("<b><i>❌️ 𝖲𝖾𝗇𝖽𝗂𝗇𝗀 𝖬𝗈𝗏𝗂𝖾 𝖴𝗉𝖽𝖺𝗍𝖾𝗌 𝖣𝗂𝗌𝖺𝖻𝗅𝖾𝖽</i></b>")
     
 @Client.on_message(filters.command("verify_id"))
 async def generate_verify_id(bot, message):
     if message.from_user.id not in ADMINS:
-        await message.reply('Only the bot Admin can use this command... 😑')
+        await message.reply('𝖮𝗇𝗅𝗒 𝗍𝗁𝖾 𝖻𝗈𝗍 𝖠𝖽𝗆𝗂𝗇 𝖼𝖺𝗇 𝗎𝗌𝖾 𝗍𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽... 😑')
         return
     chat_type = message.chat.type
     if chat_type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        return await message.reply_text("This command only works in groups!")
+        return await message.reply_text("𝖳𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗈𝗇𝗅𝗒 𝗐𝗈𝗋𝗄𝗌 𝗂𝗇 𝗀𝗋𝗈𝗎𝗉𝗌!")
     grpid = message.chat.id   
     if grpid in verification_ids:
-        await message.reply_text(f"An active Verify ID already exists for this group: `/verifyoff {verification_ids[grpid]}`")
+        await message.reply_text(f"𝖠𝗇 𝖺𝖼𝗍𝗂𝗏𝖾 𝖵𝖾𝗋𝗂𝖿𝗒 𝖨𝖣 𝖺𝗅𝗋𝖾𝖺𝖽𝗒 𝖾𝗑𝗂𝗌𝗍𝗌 𝖿𝗈𝗋 𝗍𝗁𝗂𝗌 𝗀𝗋𝗈𝗎𝗉: `/verifyoff {verification_ids[grpid]}`")
         return
     
     verify_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
     verification_ids[grpid] = verify_id
-    await message.reply_text(f"Verify ID: `/verifyoff {verify_id}` (Valid for this group, one-time use)")
+    await message.reply_text(f"𝖵𝖾𝗋𝗂𝖿𝗒 𝖨𝖣: `/verifyoff {verify_id}` (𝖵𝖺𝗅𝗂𝖽 𝖿𝗈𝗋 𝗍𝗁𝗂𝗌 𝗀𝗋𝗈𝗎𝗉, 𝗈𝗇𝖾-𝗍𝗂𝗆𝖾 𝗎𝗌𝖾)")
     return
 
 @Client.on_message(filters.command("verifyoff"))
 async def verifyoff(bot, message):
     chat_type = message.chat.type
     if chat_type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        return await message.reply_text("This command only works in groups!")
+        return await message.reply_text("𝖳𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗈𝗇𝗅𝗒 𝗐𝗈𝗋𝗄𝗌 𝗂𝗇 𝗀𝗋𝗈𝗎𝗉𝗌!")
     
     grpid = message.chat.id
     if not await is_check_admin(bot, grpid, message.from_user.id):  # Changed client to bot
-        return await message.reply_text('<b>You are not an admin in this group!</b>')
+        return await message.reply_text('<b>𝖸𝗈𝗎 𝖺𝗋𝖾 𝗇𝗈𝗍 𝖺𝗇 𝖺𝖽𝗆𝗂𝗇 𝗂𝗇 𝗍𝗁𝗂𝗌 𝗀𝗋𝗈𝗎𝗉!</b>')
     
     try:
         input_id = message.command[1]
     except IndexError:
-        return await message.reply_text("Please provide the Verify ID along with the command.\nUsage: `/verifyoff {id}`")
+        return await message.reply_text("𝖯𝗅𝖾𝖺𝗌𝖾 𝗉𝗋𝗈𝗏𝗂𝖽𝖾 𝗍𝗁𝖾 𝖵𝖾𝗋𝗂𝖿𝗒 𝖨𝖣 𝖺𝗅𝗈𝗇𝗀 𝗐𝗂𝗍𝗁 𝗍𝗁𝖾 𝖼𝗈𝗆𝗆𝖺𝗇𝖽.\n𝖴𝗌𝖺𝗀𝖾: `/verifyoff {id}`")
     
     if grpid not in verification_ids or verification_ids[grpid] != input_id:
-        return await message.reply_text("Invalid Verify ID! Please contact the admin for the correct ID.")
+        return await message.reply_text("𝖨𝗇𝗏𝖺𝗅𝗂𝖽 𝖵𝖾𝗋𝗂𝖿𝗒 𝖨𝖣! 𝖯𝗅𝖾𝖺𝗌𝖾 𝖼𝗈𝗇𝗍𝖺𝖼𝗍 𝗍𝗁𝖾 𝖺𝖽𝗆𝗂𝗇 𝖿𝗈𝗋 𝗍𝗁𝖾 𝖼𝗈𝗋𝗋𝖾𝖼𝗍 𝖨𝖣.")
     
     await save_group_settings(grpid, 'is_verify', False)
     del verification_ids[grpid]
-    return await message.reply_text("Verification successfully disabled.")
+    return await message.reply_text("𝖵𝖾𝗋𝗂𝖿𝗂𝖼𝖺𝗍𝗂𝗈𝗇 𝗌𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 𝖽𝗂𝗌𝖺𝖻𝗅𝖾𝖽.")
 
 
 @Client.on_message(filters.command("verifyon"))
 async def verifyon(bot, message):
     chat_type = message.chat.type
     if chat_type == enums.ChatType.PRIVATE:
-        return await message.reply_text("This command only works in groups!")
+        return await message.reply_text("𝖳𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗈𝗇𝗅𝗒 𝗐𝗈𝗋𝗄𝗌 𝗂𝗇 𝗀𝗋𝗈𝗎𝗉𝗌!")
     elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         grpid = message.chat.id
         title = message.chat.title
@@ -1120,26 +1120,26 @@ async def verifyon(bot, message):
         return
     
     if not await is_check_admin(bot, grpid, message.from_user.id):  # Changed client to bot
-        return await message.reply_text('<b>You are not an admin in this group!</b>')
+        return await message.reply_text('<b>𝖸𝗈𝗎 𝖺𝗋𝖾 𝗇𝗈𝗍 𝖺𝗇 𝖺𝖽𝗆𝗂𝗇 𝗂𝗇 𝗍𝗁𝗂𝗌 𝗀𝗋𝗈𝗎𝗉!</b>')
     
     await save_group_settings(grpid, 'is_verify', True)
-    return await message.reply_text("Verification successfully enabled.")
+    return await message.reply_text("𝖵𝖾𝗋𝗂𝖿𝗂𝖼𝖺𝗍𝗂𝗈𝗇 𝗌𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 𝖾𝗇𝖺𝖻𝗅𝖾𝖽.")
 
 @Client.on_message(filters.command("reset_group"))
 async def reset_group_command(client, message):
     grp_id = message.chat.id
     if not await is_check_admin(client, grp_id, message.from_user.id):
         return await message.reply_text('<b>𝖸𝗈𝗎 𝖺𝗋𝖾 𝗇𝗈𝗍 𝖺𝖽𝗆𝗂𝗇 𝗂𝗇 𝗍𝗁𝗂𝗌 𝗀𝗋𝗈𝗎𝗉</b>')
-    sts = await message.reply("<b>♻️ ᴄʜᴇᴄᴋɪɴɢ...</b>")
+    sts = await message.reply("<b>♻️ 𝖢𝗁𝖾𝖼𝗄𝗂𝗇𝗀...</b>")
     await asyncio.sleep(1.2)
     await sts.delete()
     chat_type = message.chat.type
     if chat_type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         return await message.reply_text("<b>𝖴𝗌𝖾 𝗍𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗂𝗇 𝗀𝗋𝗈𝗎𝗉...</b>")
     btn = [[
-        InlineKeyboardButton('🚫 ᴄʟᴏsᴇ 🚫', callback_data='close_data')
+        InlineKeyboardButton('🚫 𝖢𝗅𝗈𝗌𝖾 🚫', callback_data='close_data')
     ]]
     reply_markup = InlineKeyboardMarkup(btn)
     await save_default_settings(grp_id)
-    await message.reply_text('ꜱᴜᴄᴄᴇꜱꜱғᴜʟʟʏ ʀᴇꜱᴇᴛ ɢʀᴏᴜᴘ ꜱᴇᴛᴛɪɴɢꜱ...')
+    await message.reply_text('𝖲𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 𝗋𝖾𝗌𝖾𝗍 𝗀𝗋𝗈𝗎𝗉 𝗌𝖾𝗍𝗍𝗂𝗇𝗀𝗌...')
     
