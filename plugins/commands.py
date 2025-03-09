@@ -182,7 +182,7 @@ async def start(client:Client, message):
          #       newPoint = await db.get_point(refUserId)
              if AUTH_CHANNEL and await is_req_subscribed(client, message):
                         buttons = [[
-                            InlineKeyboardButton('☆ 𝖠𝖽𝖽 𝖬𝖾 𝗍𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
+                            InlineKeyboardButton('𝖬𝗈𝗏𝗂𝖾 𝖲𝖾𝖺𝗋𝖼𝗁 𝖦𝗋𝗈𝗎𝗉 🎥', url=f'https://t.me/+ZUyhAwBNBsU0YjA9')
                         ],[
                             InlineKeyboardButton("𝖧𝖾𝗅𝗉 ⚙️", callback_data='features'),
                             InlineKeyboardButton('𝖠𝖻𝗈𝗎𝗍 💌', callback_data=f'about')
@@ -192,6 +192,8 @@ async def start(client:Client, message):
                         ],[
                             InlineKeyboardButton('𝖬𝗈𝗌𝗍 𝖲𝖾𝖺𝗋𝖼𝗁𝖾𝖽 🔍', callback_data="mostsearch"),
                             InlineKeyboardButton('𝖳𝗈𝗉 𝖳𝗋𝖾𝗇𝖽𝗂𝗇𝗀 ⚡', callback_data="trending")
+                        ],[
+                            InlineKeyboardButton('☆ 𝖠𝖽𝖽 𝖬𝖾 𝗍𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
                         ]] 
                         reply_markup = InlineKeyboardMarkup(buttons)
                         m=await message.reply_sticker("CAACAgUAAxkBAAEN_ednyS4y5ZzxCHbLREN451YQI__J6gACCBQAAlnpSFb4TrqdAvsUsTYE") 
@@ -211,7 +213,7 @@ async def start(client:Client, message):
             pass
     if len(message.command) != 2:
         buttons = [[
-                            InlineKeyboardButton('☆ 𝖠𝖽𝖽 𝖬𝖾 𝗍𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
+                            InlineKeyboardButton('𝖬𝗈𝗏𝗂𝖾 𝖲𝖾𝖺𝗋𝖼𝗁 𝖦𝗋𝗈𝗎𝗉 🎥', url=f'https://t.me/+ZUyhAwBNBsU0YjA9')
                         ],[
                             InlineKeyboardButton("𝖧𝖾𝗅𝗉 ⚙️", callback_data='features'),
                             InlineKeyboardButton('𝖠𝖻𝗈𝗎𝗍 💌', callback_data=f'about')
@@ -221,6 +223,8 @@ async def start(client:Client, message):
                         ],[
                             InlineKeyboardButton('𝖬𝗈𝗌𝗍 𝖲𝖾𝖺𝗋𝖼𝗁𝖾𝖽 🔍', callback_data="mostsearch"),
                             InlineKeyboardButton('𝖳𝗈𝗉 𝖳𝗋𝖾𝗇𝖽𝗂𝗇𝗀 ⚡', callback_data="trending")
+                        ],[
+                            InlineKeyboardButton('☆ 𝖠𝖽𝖽 𝖬𝖾 𝗍𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
                         ]] 
         reply_markup = InlineKeyboardMarkup(buttons)
         m=await message.reply_sticker("CAACAgUAAxkBAAEN_ednyS4y5ZzxCHbLREN451YQI__J6gACCBQAAlnpSFb4TrqdAvsUsTYE") 
@@ -273,7 +277,7 @@ async def start(client:Client, message):
 
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('☆ 𝖠𝖽𝖽 𝖬𝖾 𝗍𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
+                            InlineKeyboardButton('𝖬𝗈𝗏𝗂𝖾 𝖲𝖾𝖺𝗋𝖼𝗁 𝖦𝗋𝗈𝗎𝗉 🎥', url=f'https://t.me/+ZUyhAwBNBsU0YjA9')
                         ],[
                             InlineKeyboardButton("𝖧𝖾𝗅𝗉 ⚙️", callback_data='features'),
                             InlineKeyboardButton('𝖠𝖻𝗈𝗎𝗍 💌', callback_data=f'about')
@@ -283,6 +287,8 @@ async def start(client:Client, message):
                         ],[
                             InlineKeyboardButton('𝖬𝗈𝗌𝗍 𝖲𝖾𝖺𝗋𝖼𝗁𝖾𝖽 🔍', callback_data="mostsearch"),
                             InlineKeyboardButton('𝖳𝗈𝗉 𝖳𝗋𝖾𝗇𝖽𝗂𝗇𝗀 ⚡', callback_data="trending")
+                        ],[
+            InlineKeyboardButton('☆ 𝖠𝖽𝖽 𝖬𝖾 𝗍𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
                         ]] 
         reply_markup = InlineKeyboardMarkup(buttons)
         return await message.reply_photo(photo=START_IMG, caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
