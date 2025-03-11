@@ -62,6 +62,49 @@ async def send_movie_updates(bot, file_name, caption, file_id):
                 season = season.group(1) if season else None       
                 file_name = file_name[:file_name.find(season) + 1]
         qualities = ["ORG", "org", "hdcam", "HDCAM", "HQ", "hq", "HDRip", "hdrip", 
+                     "camrip", "WEB-DL", "CAMRip", "hdtc", "predvd", "DVDscr", "dvdscr", 
+                     "dvdrip", "dvdscr", "HDTC", "dvdscreen", "HDTS", "hdts"]
+        quality = await check_qualities(caption, qualities) or "HDRip"
+        language = ""
+        nb_languages = ["Hindi", "Bengali", "English", "Marathi", "Tamil", "Telugu", "Malayalam", "Kannada", "Punjabi", "Gujrati", "Korean", "Japanese", "Bhojpuri", "Dual", "Multi"]    
+        for lang in nb_languages:
+            if lang.lower() in caption.lower():
+                language += f"{lang}, "
+        language = language.strip(", ") or "𝖮𝗋𝗂𝗀𝗂𝗇𝖺𝗅 𝖫𝖺𝗇𝗀𝗎𝖺𝗀𝖾"
+        movie_name = await movie_name_format(file_name)    
+        if movie_name in processed_movies:
+            return 
+        processed_movies.add(movie_name)    
+        caption_message = f"#New_File_Added ✅\n\n𝖥𝗂𝗅𝖾 𝖭𝖺𝗆𝖾:- <code>{movie_name}</code>\n\n𝖫𝖺𝗇𝗀𝗎𝖺𝗀𝖾:- {language}\n\n𝖰𝗎𝖺𝗅𝗂𝗍𝗒:- {quality}" 
+        search_movie = movie_name.replace(" ", '-')
+        movie_update_channel = await db.movies_update_channel_id()    
+        btn = [[tg://resolve?domain={temp.U_NAME}&start=getfile-{search_movie}
+            InlineKeyboardButton('🔍 𝖢𝗅𝗂𝖼𝗄 𝗍𝗈 𝗌𝖾𝖺𝗋𝖼𝗁', url=f'tg://resolve?domain={temp.U_NAME}&start=getfile-{search_movie}')
+        ]]
+
+        reply_markup = InlineKeyboardMarkup(btn)
+        # Send only the message without photo
+        await bot.send_message(movie_update_channel if movie_update_channel else MOVIE_UPDATE_CHANNEL, 
+                               text=caption_message, reply_markup=reply_markup)
+    except Exception as e:
+        print('Failed to send movie update. Error - ', e)
+        await bot.send_message(LOG_CHANNEL, f'𝖥𝖺𝗂𝗅𝖾𝖽 𝗍𝗈 𝗌𝖾𝗇𝖽 𝗆𝗈𝗏𝗂𝖾 𝗎𝗉𝖽𝖺𝗍𝖾. 𝖤𝗋𝗋𝗈𝗋 - {e}')
+
+"""async def send_movie_updates(bot, file_name, caption, file_id):
+    try:
+        year_match = re.search(r"\b(19|20)\d{2}\b", caption)
+        year = year_match.group(0) if year_match else None      
+        pattern = r"(?i)(?:s|season)0*(\d{1,2})"
+        season = re.search(pattern, caption)
+        if not season:
+            season = re.search(pattern, file_name) 
+        if year:
+            file_name = file_name[:file_name.find(year) + 4]      
+        if not year:
+            if season:
+                season = season.group(1) if season else None       
+                file_name = file_name[:file_name.find(season) + 1]
+        qualities = ["ORG", "org", "hdcam", "HDCAM", "HQ", "hq", "HDRip", "hdrip", 
                      "camrip", "WEB-DL" "CAMRip", "hdtc", "predvd", "DVDscr", "dvdscr", 
                      "dvdrip", "dvdscr", "HDTC", "dvdscreen", "HDTS", "hdts"]
         quality = await check_qualities(caption, qualities) or "HDRip"
@@ -92,6 +135,6 @@ async def send_movie_updates(bot, file_name, caption, file_id):
                                  photo=no_poster, caption=caption_message, reply_markup=reply_markup)  
     except Exception as e:
         print('Failed to send movie update. Error - ', e)
-        await bot.send_message(LOG_CHANNEL, f'𝖥𝖺𝗂𝗅𝖾𝖽 𝗍𝗈 𝗌𝖾𝗇𝖽 𝗆𝗈𝗏𝗂𝖾 𝗎𝗉𝖽𝖺𝗍𝖾. 𝖤𝗋𝗋𝗈𝗋 - {e}')
+        await bot.send_message(LOG_CHANNEL, f'𝖥𝖺𝗂𝗅𝖾𝖽 𝗍𝗈 𝗌𝖾𝗇𝖽 𝗆𝗈𝗏𝗂𝖾 𝗎𝗉𝖽𝖺𝗍𝖾. 𝖤𝗋𝗋𝗈𝗋 - {e}')"""
     
   
