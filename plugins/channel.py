@@ -78,7 +78,7 @@ async def send_movie_updates(bot, file_name, caption, file_id):
         caption_message = f"#New_File_Added ✅\n\n𝖥𝗂𝗅𝖾 𝖭𝖺𝗆𝖾:- <code>{movie_name}</code>\n\n𝖫𝖺𝗇𝗀𝗎𝖺𝗀𝖾:- {language}\n\n𝖰𝗎𝖺𝗅𝗂𝗍𝗒:- {quality}" 
         search_movie = movie_name.replace(" ", '-')
         movie_update_channel = await db.movies_update_channel_id()    
-        btn = [[tg://resolve?domain={temp.U_NAME}&start=getfile-{search_movie}
+        btn = [[
             InlineKeyboardButton('🔍 𝖢𝗅𝗂𝖼𝗄 𝗍𝗈 𝗌𝖾𝖺𝗋𝖼𝗁', url=f'tg://resolve?domain={temp.U_NAME}&start=getfile-{search_movie}')
         ]]
 
